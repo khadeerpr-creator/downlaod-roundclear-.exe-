@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download RoundClear AI — Real-time Interview Copilot</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=DM+Mono&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07090f;--bg2:#0d1017;--bg3:#131720;--bg4:#1a2030;
+  --gold:#e6b84a;--gold2:#f0c866;--goldf:rgba(230,184,74,.08);
+  --text:#e8eaf0;--text2:#8892a4;--text3:#4a5568;
+  --border:#1e2535;--border2:#2a3448;
+  --grn:#22c55e;--grnf:rgba(34,197,94,.08);
+  --r:12px;--r2:8px;
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;min-height:100vh}
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 40px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(7,9,15,.95);backdrop-filter:blur(12px);z-index:100}
+.nav-logo{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--gold);letter-spacing:-.5px}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-back{font-size:13px;color:var(--text2);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--gold)}
+/* HERO */
+.hero{text-align:center;padding:64px 24px 48px;max-width:680px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--goldf);border:1px solid rgba(230,184,74,.2);border-radius:20px;padding:5px 14px;font-size:12px;color:var(--gold);font-weight:600;margin-bottom:20px;letter-spacing:.3px}
+.hero h1{font-family:'Syne',sans-serif;font-size:42px;font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:14px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:16px;color:var(--text2);line-height:1.6;margin-bottom:32px}
+/* VERSION BADGE */
+.version-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);padding:8px 16px;font-size:13px;color:var(--text2);margin-bottom:40px}
+.v-dot{width:7px;height:7px;border-radius:50%;background:var(--grn);box-shadow:0 0 8px var(--grn)}
+/* OS TABS */
+.os-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:32px}
+.os-tab{display:flex;align-items:center;gap:8px;padding:10px 22px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);cursor:pointer;font-size:14px;font-weight:600;color:var(--text2);transition:all .2s;font-family:'DM Sans',sans-serif}
+.os-tab:hover{border-color:var(--gold);color:var(--gold)}
+.os-tab.active{background:var(--goldf);border-color:rgba(230,184,74,.4);color:var(--gold)}
+.os-icon{font-size:18px}
+/* DOWNLOAD CARD */
+.dl-card{max-width:520px;margin:0 auto 24px;background:var(--bg2);border:1px solid var(--border2);border-radius:16px;overflow:hidden}
+.dl-card-header{padding:20px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px}
+.dl-platform-icon{width:48px;height:48px;border-radius:10px;background:var(--goldf);border:1px solid rgba(230,184,74,.2);display:flex;align-items:center;justify-content:center;font-size:24px}
+.dl-platform-name{font-family:'Syne',sans-serif;font-size:16px;font-weight:700}
+.dl-platform-sub{font-size:12px;color:var(--text2);margin-top:2px}
+.dl-version{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;margin-left:auto}
+.dl-card-body{padding:24px}
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px;background:linear-gradient(135deg,var(--gold),var(--gold2));border:none;border-radius:var(--r);font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#07090f;cursor:pointer;text-decoration:none;transition:all .2s;box-shadow:0 4px 20px rgba(230,184,74,.25);letter-spacing:-.2px}
+.dl-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(230,184,74,.35)}
+.dl-btn:active{transform:translateY(0)}
+.dl-btn-icon{font-size:20px}
+.dl-meta{display:flex;justify-content:center;gap:20px;margin-top:16px;flex-wrap:wrap}
+.dl-meta-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text3)}
+/* FREE TIER BANNER */
+.free-banner{max-width:520px;margin:0 auto 32px;padding:14px 18px;background:var(--grnf);border:1px solid rgba(34,197,94,.2);border-radius:var(--r);display:flex;align-items:center;gap:12px}
+.fb-icon{font-size:20px;flex-shrink:0}
+.fb-text{font-size:13px;color:var(--text2);line-height:1.6}
+.fb-text strong{color:var(--text)}
+/* AFTER DOWNLOAD */
+.after-dl{display:none;max-width:520px;margin:0 auto 24px;padding:18px 22px;background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.2);border-radius:var(--r);text-align:center}
+.after-dl-title{font-weight:700;color:var(--grn);margin-bottom:6px;font-size:15px}
+.after-dl p{font-size:13px;color:var(--text2);line-height:1.6}
+.after-dl a{color:var(--gold);text-decoration:none;font-weight:600}
+.after-dl a:hover{text-decoration:underline}
+/* STEPS */
+.steps{max-width:520px;margin:0 auto 48px}
+.steps-title{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:16px;text-align:center}
+.step{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border)}
+.step:last-child{border-bottom:none}
+.step-num{width:26px;height:26px;border-radius:50%;background:var(--goldf);border:1px solid rgba(230,184,74,.3);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--gold);flex-shrink:0;margin-top:1px}
+.step-content{flex:1}
+.step-title{font-size:14px;font-weight:600;margin-bottom:3px}
+.step-sub{font-size:12px;color:var(--text2);line-height:1.5}
+code{background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:1px 6px;font-family:'DM Mono',monospace;font-size:11px;color:var(--gold)}
+/* SECURITY NOTE */
+.security{max-width:520px;margin:0 auto 60px;padding:16px 20px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);display:flex;gap:12px}
+.sec-icon{font-size:20px;flex-shrink:0}
+.sec-text{font-size:12px;color:var(--text2);line-height:1.6}
+.sec-text strong{color:var(--text);display:block;margin-bottom:3px}
+/* GUIDE CTA */
+.guide-cta{max-width:520px;margin:0 auto 48px;padding:20px 24px;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r);display:flex;align-items:center;justify-content:space-between;gap:16px}
+.gc-left .gc-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px}
+.gc-left .gc-sub{font-size:12px;color:var(--text2)}
+.gc-btn{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;background:var(--goldf);border:1px solid rgba(230,184,74,.3);border-radius:var(--r2);font-size:13px;font-weight:600;color:var(--gold);text-decoration:none;white-space:nowrap;transition:all .2s}
+.gc-btn:hover{background:rgba(230,184,74,.14);border-color:rgba(230,184,74,.5)}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:24px 40px;text-align:center;font-size:12px;color:var(--text3)}
+footer a{color:var(--text2);text-decoration:none}
+footer a:hover{color:var(--gold)}
+</style>
+<script>
+const DOWNLOAD_URLS = {
+  'win-x64':       'https://github.com/khadeerpr-creator/RoundClear-AI/releases/download/v1.0.2/RoundClear.AI.Setup.1.0.2.exe',
+  'mac-universal': ''
+};
+function triggerDownload(platform) {
+  const url = DOWNLOAD_URLS[platform];
+  if (!url) {
+    alert('Mac version coming soon! Email support@roundclear.in to join the waitlist.');
+    return false;
+  }
+  const a = document.createElement('a');
+  a.href = url;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  document.getElementById('afterDl').style.display = 'block';
+  document.getElementById('afterDl').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  return false;
+}
+function switchOS(os) {
+  document.getElementById('win-section').style.display = os === 'win' ? 'block' : 'none';
+  document.getElementById('mac-section').style.display = os === 'mac' ? 'block' : 'none';
+  document.querySelectorAll('.os-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + os).classList.add('active');
+}
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">⬡ RoundClear AI</div>
+  <div class="nav-links">
+    <a href="guide.html" class="nav-back">📖 Setup Guide</a>
+    <a href="index.html" class="nav-back">← Home</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">🎙️ Real-time Interview Copilot</div>
+  <h1>Download <span>RoundClear AI</span></h1>
+  <p>Install in 60 seconds. Works with Zoom, Teams, Google Meet, and any interview platform.</p>
+  <div class="version-badge">
+    <div class="v-dot"></div>
+    <span>v1.0.2 · Latest stable release</span>
+  </div>
+</div>
+
+<!-- OS TABS -->
+<div class="os-tabs">
+  <button class="os-tab active" id="tab-win" onclick="switchOS('win')">
+    <span class="os-icon">🪟</span> Windows
+  </button>
+  <button class="os-tab" id="tab-mac" onclick="switchOS('mac')">
+    <span class="os-icon">🍎</span> macOS
+    <span style="font-size:10px;opacity:.6;font-weight:400">(soon)</span>
+  </button>
+</div>
+
+<!-- WINDOWS -->
+<div id="win-section">
+  <div class="dl-card">
+    <div class="dl-card-header">
+      <div class="dl-platform-icon">🪟</div>
+      <div>
+        <div class="dl-platform-name">Windows</div>
+        <div class="dl-platform-sub">Windows 10 / 11 — 64-bit · ~90 MB</div>
+      </div>
+      <div class="dl-version">v1.0.2 · Latest</div>
+    </div>
+    <div class="dl-card-body">
+      <a class="dl-btn" href="#" onclick="return triggerDownload('win-x64')">
+        <span class="dl-btn-icon">⬇</span>
+        Download for Windows — Free
+      </a>
+      <div class="dl-meta">
+        <span class="dl-meta-item">⚡ 30 min free</span>
+        <span class="dl-meta-item">✅ No account needed</span>
+        <span class="dl-meta-item">🌐 Requires internet</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAC -->
+<div id="mac-section" style="display:none">
+  <div class="dl-card">
+    <div class="dl-card-header">
+      <div class="dl-platform-icon">🍎</div>
+      <div>
+        <div class="dl-platform-name">macOS</div>
+        <div class="dl-platform-sub">Coming soon — join waitlist below</div>
+      </div>
+    </div>
+    <div class="dl-card-body">
+      <a class="dl-btn" href="/cdn-cgi/l/email-protection#f88b8d8888978a8cb88a978d969c9b949d998ad69196c78b8d9a929d9b8cc5b5999bddcac8af99918c94918b8cddcac8d5ddcac8aa978d969cbb949d998addcac8b9b1" style="background:var(--bg4);color:var(--text2);box-shadow:none">
+        📬 Join Mac Waitlist
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FREE TIER INFO -->
+<div class="free-banner">
+  <div class="fb-icon">⚡</div>
+  <div class="fb-text">
+    <strong>30 minutes free — no sign-up required.</strong>
+    Need more? Upgrade to Pro for 120 minutes at ₹2,500 or $30. Minutes never expire and carry across sessions.
+  </div>
+</div>
+
+<!-- AFTER DOWNLOAD -->
+<div class="after-dl" id="afterDl">
+  <div class="after-dl-title">✅ Download started!</div>
+  <p>Your installer is downloading. Follow the steps below.<br>
+  First time? Read the <a href="guide.html">Setup Guide</a> — takes 2 minutes.</p>
+</div>
+
+<!-- INSTALL STEPS -->
+<div class="steps">
+  <div class="steps-title">Installation Steps</div>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <div class="step-title">Run the installer</div>
+      <div class="step-sub">Open <code>RoundClear.AI.Setup.1.0.2.exe</code> from your Downloads folder.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <div class="step-title">Windows SmartScreen warning</div>
+      <div class="step-sub">Click <strong>"More Info"</strong> → <strong>"Run Anyway"</strong>. This appears because we are an independent publisher — the app is safe.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <div class="step-title">Complete installation</div>
+      <div class="step-sub">Click Next → Install → Finish. A desktop shortcut is created automatically.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <div class="step-title">Open RoundClear AI</div>
+      <div class="step-sub">Double-click the desktop shortcut. Enter your <strong>role</strong>, <strong>company</strong>, and <strong>experience level</strong>. Upload your resume for personalised answers.</div>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <div class="step-title">Start your session</div>
+      <div class="step-sub">Click <strong>Start Session</strong>. The app listens to your interview and generates AI answers in real-time — <strong>under 1 second</strong> after the question is asked.</div>
+    </div>
+  </div>
+</div>
+
+<!-- GUIDE CTA -->
+<div class="guide-cta">
+  <div class="gc-left">
+    <div class="gc-title">📖 First time using RoundClear?</div>
+    <div class="gc-sub">The setup guide walks you through audio configuration, resume upload, and getting the best answers.</div>
+  </div>
+  <a href="guide.html" class="gc-btn">Read Guide →</a>
+</div>
+
+<!-- SECURITY NOTE -->
+<div class="security">
+  <div class="sec-icon">🔒</div>
+  <div class="sec-text">
+    <strong>Is this safe?</strong>
+    RoundClear AI only captures audio when you press Start. Audio is processed in real-time by Groq Whisper and immediately discarded — nothing is stored. Your resume is sent securely and used only to personalise answers for your session.
+  </div>
+</div>
+
+<footer>
+  <p>RoundClear AI · Built for interview candidates · Every domain, every role</p>
+  <p style="margin-top:6px">
+    <a href="/cdn-cgi/l/email-protection#fd8e888d8d928f89bd8f928893999e91989c8fd39493"><span class="__cf_email__" data-cfemail="5724222727382523172538223933343b323625793e39">[email&#160;protected]</span></a>
+    &nbsp;·&nbsp;
+    <a href="index.html">Hom
