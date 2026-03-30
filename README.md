@@ -2,23 +2,48 @@
 
 RoundClear AI listens to your interview in real-time and instantly generates expert answers you can speak confidently.
 
-✅ WHAT'S NEW IN v1.0.2
+What is RoundClear AI?
+RoundClear AI is a real-time interview coaching desktop app that listens to your interview and delivers AI-powered answers in under 1.5 seconds — completely invisible to your interviewer.
+Works with Zoom, Microsoft Teams, Google Meet, Skype and every other interview platform.
 
-Upgraded to Claude Sonnet AI — more accurate, deeper answers
-Adaptive answers — short questions get concise answers,
-scenario questions get full analysis
-Resume upload — app learns your tech stack for better transcription
-Auto-listen mode fixed — no more dead loops between questions
-Faster transcription — Whisper large-v3-turbo
-Bigger UI window — easier to read during interviews
+Features
 
-🎯 HOW IT WORKS
+🎙 Real-time listening — captures interviewer questions directly from your speakers
+⚡ Answers in 1.5s — AI generates structured bullet-point answers instantly
+🌐 Every domain — Tech, Finance, Marketing, HR, Data, Product, Cybersecurity and more
+📄 Resume-aware — upload your resume for personalised answers using your real experience
+🔒 100% private — nothing is recorded or stored. Audio is processed and discarded instantly
+🖥 Windows desktop app — lightweight, runs silently in the background
 
-Install and open RoundClear AI
-Enter your company, role, and round type
-Upload your resume (optional but recommended)
-Click Start — app listens to your interview audio
-Answers appear in real-time as the interviewer speaks
+
+Download
+👉 Download for Windows (Free)
+
+Platform: Windows 10 / 11 (64-bit)
+Size: ~85 MB
+No subscription required — 30 minutes free on first install
+
+
+How It Works
+Your Interview Call (Zoom / Teams / Meet)
+         ↓
+RoundClear captures audio from speakers
+         ↓
+Deepgram Nova-2 transcribes speech in <300ms
+         ↓
+Claude AI generates structured answer
+         ↓
+Answer appears on your screen in 1.5s ✅
+
+Pricing
+PlanMinutesPriceFree30 minutes₹0 / $0Pro Pack120 minutes₹2,500 / $30
+Minutes never expire. Use across sessions.
+
+Support
+
+📧 Email: support@roundclear.in
+🌐 Website: roundclear.in
+📖 Guide: roundclear.in/guide.html
 
 🔊 AUDIO MODES
 
@@ -50,3 +75,10 @@ Click Start Session
 Windows may show "Unknown Publisher" warning on first run.
 Click "More Info" → "Run Anyway" — this is safe.
 We are working on code signing for future releases.
+
+Legal
+© 2025 RoundClear AI. All rights reserved.
+This software is proprietary. The installer provided in Releases is for end-user installation only.
+Source code is not publicly available. Unauthorised copying, modification, reverse engineering,
+or redistribution is strictly prohibited.
+See LICENSE for full terms.
